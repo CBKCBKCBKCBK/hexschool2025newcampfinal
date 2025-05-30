@@ -1,0 +1,196 @@
+body *,
+* {
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+nav.header {
+    display: flex;
+    justify-content: center;
+    padding: 24px;
+    gap: 40px;
+    font-weight: bolder;
+    font-size: 28px;
+}
+
+nav.header a {
+    color: #000;
+}
+
+.titlebg {
+    display: flex;
+    /* width: 100%; */
+    height: calc(100vh - 90px);
+}
+
+.titlebg .bg01,
+.titlebg .bg02 {
+    width: 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.titlebg .bg01 {
+    background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-web-camp/desktop/index/Hero Section.png");
+}
+
+.titlebg .bg02 {
+    background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-web-camp/desktop/index/Hero Section2.png");
+    display: flex;
+    flex-direction: column;
+    color: #0027d5;
+    justify-content: center;
+}
+.titlebox{
+    margin-left: 3rem;
+}
+
+.titlebg .nametitle {
+    font-size: 120px;
+}
+
+.titlebg .jobtitle {
+    font-size: 28px;
+}
+
+/*.titlebg .bg01 *,.titlebg .bg02 *{
+    max-width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+.titlebg .bg02{
+    position: relative;
+}
+.titlebg .bg02 .titletext{
+    position: absolute;
+    top: 12vw;
+    left: 3rem;
+    color: #0027d5;
+    font-weight: bold;
+}
+.titletext .nametitle{
+    font-size: 7vw;
+}*/
+@media screen and (max-width: 767px) {
+    .titlebg {
+        flex-wrap: wrap;
+    }
+
+    .titlebg .bg01,
+    .titlebg .bg02 {
+        min-width: 100%;
+    }
+
+    .titlebg .bg01 {
+        background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-web-camp/mobile/index/Hero Section.png");
+    }
+
+    .titlebg .bg02 {
+        background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-web-camp/mobile/index/Hero Section2.png");
+        justify-content: flex-start;
+    }
+    .titlebox{
+        flex-wrap: wrap;
+    }
+}
+
+.container {
+    display: flex;
+    margin: 0 auto;
+    gap: 16px;
+    max-width: 1600px;
+    padding: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    max-width: 416px;
+    margin: 24px 0;
+}
+
+.block>picture>* {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.block>article {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .block {
+        max-width: 100%;
+    }
+
+    .block>picture>* {
+        height: unset
+    }
+}
+
+.tag {
+    font-weight: bold;
+    font-size: large;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.fixcontent {
+    display: -webkit-box;
+    /* 必須使用這個屬性來啟用多行截斷 */
+    -webkit-box-orient: vertical;
+    /* 設定為垂直方向 */
+    overflow: hidden;
+    /* 隱藏超出內容 */
+    text-overflow: ellipsis;
+    /* 添加省略號 */
+    -webkit-line-clamp: 2;
+    /* 限制顯示的行數為 2 行 */
+}
+
+.subtitle {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.desc {
+    font-weight: normal;
+}
+
+.read-content {
+    display: inline-block;
+    color: #4b4b4b;
+    border: 1.5px solid #4b4b4b;
+    border-radius: 40px;
+    padding: 8px 16px;
+}
+
+.best-content {
+    background: blue;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 40px;
+    font-size: small;
+    vertical-align: 2px;
+}
+
+.footer {
+    background-color: #f8f9fa;
+    padding: 24px 0;
+    text-align: center;
+    color: #666;
+}
