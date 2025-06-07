@@ -11,6 +11,10 @@ nav.header {
     gap: 40px;
     font-weight: bolder;
     font-size: 28px;
+    position: fixed;
+    z-index: 1;
+    background-color: #fff;
+    width: 100%;
 }
 
 nav.header a {
@@ -21,6 +25,7 @@ nav.header a {
     display: flex;
     /* width: 100%; */
     height: calc(100vh - 90px);
+    padding-top: 90px;
 }
 
 .titlebg .bg01,
@@ -43,7 +48,8 @@ nav.header a {
     color: #0027d5;
     justify-content: center;
 }
-.titlebox{
+
+.titlebox {
     margin-left: 3rem;
 }
 
@@ -73,14 +79,16 @@ nav.header a {
 .titletext .nametitle{
     font-size: 7vw;
 }*/
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 768px) {
     .titlebg {
         flex-wrap: wrap;
+        height: auto;
     }
 
     .titlebg .bg01,
     .titlebg .bg02 {
         min-width: 100%;
+        height: calc(100vh - 90px - 180px)
     }
 
     .titlebg .bg01 {
@@ -90,10 +98,99 @@ nav.header a {
     .titlebg .bg02 {
         background-image: url("https://raw.githubusercontent.com/hexschool/2022-web-layout-training/refs/heads/main/2025-web-camp/mobile/index/Hero Section2.png");
         justify-content: flex-start;
-    }
-    .titlebox{
         flex-wrap: wrap;
     }
+
+    .titlebox {
+        margin: 10% 1rem 0;
+    }
+
+    .titlebox .nametitle {
+        font-size: 14vw;
+        font-weight: 900;
+    }
+
+    .titlebox .jobtitle {
+        font-size: 8vw;
+        font-weight: 700;
+    }
+}
+
+.introduce {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+.introduce .block {
+    width: 55vw;
+    height: 20vw;
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0.7) 0%,
+            /* 上方 50% 透明 */
+            rgba(255, 255, 255, 1) 50%,
+            /* 漸層過渡 */
+            rgba(255, 255, 255, 1) 100%
+            /* 下方全透明 */
+        );
+    margin-top: -10vw;
+    margin-right: 2vw;
+    padding: 2vw;
+    z-index: 1;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.introduce .block ul {
+    display: flex;
+}
+
+.introduce .block li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3vw;
+    height: 3vw;
+    min-width: 44px;
+    min-height: 44px;
+    text-decoration: none;
+}
+
+.introduce .block li a i::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.5vw;
+    height: 1.5vw;
+}
+@media screen and (max-width: 768px){
+    .introduce{
+        justify-content: center;
+        font-size: 6.6vw;
+    }
+    .introduce .block {
+        width: 90%;
+        height: unset;
+        background: linear-gradient(to bottom,
+                rgba(255, 255, 255, 0.7) 0%,
+                /* 上方 50% 透明 */
+                rgba(255, 255, 255, 1) 50%,
+                /* 漸層過渡 */
+                rgba(255, 255, 255, 1) 100%
+                /* 下方全透明 */
+            );
+        margin-top: -50vw;
+        padding: 5vw;
+        z-index: 1;
+        border: 1px solid #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    /* .block p:nth-of-type(1){word-break: keep-all;} */
 }
 
 .container {
@@ -106,20 +203,20 @@ nav.header a {
     justify-content: center;
 }
 
-.block {
+.container .block {
     display: flex;
     flex-direction: column;
     max-width: 416px;
     margin: 24px 0;
 }
 
-.block>picture>* {
+.container .block>picture>* {
     width: 100%;
     height: 200px;
     object-fit: contain;
 }
 
-.block>article {
+.container .block>article {
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -127,11 +224,11 @@ nav.header a {
 }
 
 @media screen and (max-width: 600px) {
-    .block {
+    .container .block {
         max-width: 100%;
     }
 
-    .block>picture>* {
+    .container .block>picture>* {
         height: unset
     }
 }
